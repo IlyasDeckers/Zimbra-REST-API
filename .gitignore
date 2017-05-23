@@ -1,3 +1,4 @@
 .env
 *.pyc
-database/sqlite
+database/_database.sqlite
+flask/

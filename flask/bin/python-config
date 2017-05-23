@@ -1,4 +1,4 @@
-#!/home/ilyas/script/zimbra-api/flask/bin/python
+#!/home/ilyas/script/Zimbra-REST-API/flask/bin/python
 
 import sys
 import getopt

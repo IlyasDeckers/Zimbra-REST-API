@@ -8,7 +8,7 @@ This Python app provides an easy to use and understand wrapper around the Zibmra
 
 ## Installation
 
-Comming soom
+Comming soon
 
 ## Usage
 
@@ -21,8 +21,7 @@ GET /api/accounts
 
 POST /api/account/create
 
-     curl -i -u user:password -H "Content-Type: application/json" -X POST -d "{"domain":"example.com
-"}" http://IP:5000/todo/api/account/create
+     curl -i -u user:password -H "Content-Type: application/json" -X POST -d "{"domain":"example.com"}" http://IP:5000/todo/api/account/create
 
 # Get all domains
 GET /api/domains

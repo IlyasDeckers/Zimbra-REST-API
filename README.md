@@ -16,6 +16,17 @@ Comming soom
 
 ```
 GET /api/accounts
+
+    curl -i -u user:password -H "Content-Type: application/json" -X POST http://IP:5000/todo/api/account/create
+
 POST /api/account/create
-POST /api/domains/create
+
+     curl -i -u user:password -H "Content-Type: application/json" -X POST -d "{"domain":"example.com
+"}" http://IP:5000/todo/api/account/create
+
+# Get all domains
+GET /api/domains
+
+# Add a new domain
+POST /api/domain/create
 ```

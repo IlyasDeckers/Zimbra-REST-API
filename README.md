@@ -12,13 +12,7 @@ This Python app provides an easy to use and understand wrapper around the Zibmra
 $ cd /opt
 $ sudo git clone https://github.com/IlyasDeckers/Zimbra-REST-API.git
 $ cd Zimbra-REST-API
-$ virtualenv flask
-New python executable in flask/bin/python
-Installing setuptools............................done.
-Installing pip...................done.
-$ flask/bin/pip install flask passlib flask-httpauth
-$ flask/bin/pip install -r requirements.txt
-$ sudo chown -R USERNAME:zimbra ../Zimbra-REST-API
+$ sh install.sh
 $ sudo su zimbra
 $ ./run.py
 ```

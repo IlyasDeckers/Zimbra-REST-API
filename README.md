@@ -1,7 +1,7 @@
 # Zimbra REST API
 ## Introduction
 
-*** Work in progress
+Work in progress
 
 Ever felt in need of a simple API to provission Zimbra accounts and other tasks?  
 This Python app provides an easy to use and understand wrapper around the Zibmra ecosystem
@@ -36,3 +36,9 @@ GET /api/domains
 # Add a new domain
 POST /api/domain/create
 ```
+
+## To-do
+- create routes
+- update auth system with tokens
+- proxy server
+- update installation

@@ -1,0 +1,30 @@
+{
+  "api": {
+    "route": "/api",
+    "method": "GET",
+    "params": {
+      
+    },
+    "description": ""
+  },
+  
+  "api/accounts": {
+    "route": "/api",
+    "method": "GET",
+    "params": {
+      
+    },
+    "command": "zmprov -l GetAllAccounts",
+    "description": ""
+  },
+  
+  "api/accounts": {
+    "route": "/api",
+    "method": "POST",
+    "params": {
+      "domain": "required, string"
+    },
+    "command": "zmprov -l GetAllAccounts",
+    "description": ""
+  }
+}

@@ -1,4 +1,4 @@
 .env
 *.pyc
-database/_database.sqlite
+app/database/_database.sqlite
 flask/

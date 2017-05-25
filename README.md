@@ -26,15 +26,23 @@ GET /api/accounts
 
     curl -i -u user:password -H "Content-Type: application/json" -X POST http://IP:5000/todo/api/account/create
 
+POST /api/accounts
+
+    curl -i -u user:password -H "Content-Type: application/json" -X POST -d "{"domain":"example.com"}" http://IP:5000/todo/api/account/create
+
 POST /api/account/create
 
-     curl -i -u user:password -H "Content-Type: application/json" -X POST -d "{"domain":"example.com"}" http://IP:5000/todo/api/account/create
+     curl -i -u user:password -H "Content-Type: application/json" -X POST -d "{"account":"info@example.com", "password": "PASSWORD"}" http://IP:5000/todo/api/account/create
 
-# Get all domains
-GET /api/domains
+# Delete account
+POST /api/account/delete
+
+    curl -i -u user:password -H "Content-Type: application/json" -X POST -d "{"account":"info@example.com"}" http://IP:5000/todo/api/account/delete
 
 # Add a new domain
-POST /api/domain/create
+POST /api/account/info
+
+    curl -i -u user:password -H "Content-Type: application/json" -X POST -d "{"account":"info@example.com"}" http://IP:5000/todo/api/account/info
 ```
 
 ## To-do

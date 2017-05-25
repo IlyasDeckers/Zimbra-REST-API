@@ -2,6 +2,7 @@
 from passlib.apps import custom_app_context as pwd_context
 from passlib.apps import custom_app_context as pwdhash
 from flask.ext.httpauth import HTTPBasicAuth
+from app.api import Response
 import ConfigParser
 
 auth = HTTPBasicAuth()
@@ -19,8 +20,8 @@ class Auth():
 		config = ConfigParser.ConfigParser()
 		config.read('.env')
 		if not config.get('USER', 'password'):
-			config.set('USER', 'password', pwdhash.encrypt(request.json.get('password')))
-			config.set('USER', 'username', request.json.get('username'))
+			config.set('USER', 'password', pwdhash.encrypt(password))
+			config.set('USER', 'username', username)
 			with open('.env', 'w') as configfile:
 				config.write(configfile)
 			msg = 'Password has been updated'

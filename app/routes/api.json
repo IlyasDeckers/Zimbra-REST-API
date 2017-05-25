@@ -1,6 +1,5 @@
 {
   "api": {
-    "route": "/api",
     "method": "GET",
     "params": {
       
@@ -9,7 +8,6 @@
   },
   
   "api/accounts": {
-    "route": "/api",
     "method": "GET",
     "params": {
       
@@ -19,12 +17,39 @@
   },
   
   "api/accounts": {
-    "route": "/api",
     "method": "POST",
     "params": {
       "domain": "required, string"
     },
     "command": "zmprov -l GetAllAccounts",
+    "description": ""
+  },
+  
+  "api/account/create": {
+    "method": "POST",
+    "params": {
+      "account": "required, string",
+      "password": "required, string"
+    },
+    "command": "zmprov createAccount",
+    "description": ""
+  },
+  
+  "api/account/delete": {
+    "method": "POST",
+    "params": {
+      "account": "required, string"
+    },
+    "command": "zmprov deleteAccount",
+    "description": ""
+  },
+  
+  "api/account/info": {
+    "method": "POST",
+    "params": {
+      "account": "required, string"
+    },
+    "command": "zmprov getAccount",
     "description": ""
   }
 }

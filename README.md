@@ -1,7 +1,7 @@
 # Zimbra REST API
 ## Introduction
 
-*** Work in progress
+Work in progress
 
 Ever felt in need of a simple API to provission Zimbra accounts and other tasks?  
 This Python app provides an easy to use and understand wrapper around the Zibmra ecosystem
@@ -12,13 +12,7 @@ This Python app provides an easy to use and understand wrapper around the Zibmra
 $ cd /opt
 $ sudo git clone https://github.com/IlyasDeckers/Zimbra-REST-API.git
 $ cd Zimbra-REST-API
-$ virtualenv flask
-New python executable in flask/bin/python
-Installing setuptools............................done.
-Installing pip...................done.
-$ flask/bin/pip install flask passlib flask-httpauth
-$ flask/bin/pip install -r requirements.txt
-$ sudo chown -R USERNAME:zimbra ../Zimbra-REST-API
+$ sh install.sh
 $ sudo su zimbra
 $ ./run.py
 ```
@@ -32,13 +26,27 @@ GET /api/accounts
 
     curl -i -u user:password -H "Content-Type: application/json" -X POST http://IP:5000/todo/api/account/create
 
+POST /api/accounts
+
+    curl -i -u user:password -H "Content-Type: application/json" -X POST -d "{"domain":"example.com"}" http://IP:5000/todo/api/account/create
+
 POST /api/account/create
 
-     curl -i -u user:password -H "Content-Type: application/json" -X POST -d "{"domain":"example.com"}" http://IP:5000/todo/api/account/create
+     curl -i -u user:password -H "Content-Type: application/json" -X POST -d "{"account":"info@example.com", "password": "PASSWORD"}" http://IP:5000/todo/api/account/create
 
-# Get all domains
-GET /api/domains
+# Delete account
+POST /api/account/delete
+
+    curl -i -u user:password -H "Content-Type: application/json" -X POST -d "{"account":"info@example.com"}" http://IP:5000/todo/api/account/delete
 
 # Add a new domain
-POST /api/domain/create
+POST /api/account/info
+
+    curl -i -u user:password -H "Content-Type: application/json" -X POST -d "{"account":"info@example.com"}" http://IP:5000/todo/api/account/info
 ```
+
+## To-do
+- create routes
+- update auth system with tokens
+- proxy server
+- update installation

@@ -1,7 +1,7 @@
 #!flask/bin/python
 from passlib.apps import custom_app_context as pwd_context
 from passlib.apps import custom_app_context as pwdhash
-from flask.ext.httpauth import HTTPBasicAuth
+from flask_httpauth import HTTPBasicAuth
 from app.api import Response
 import ConfigParser
 

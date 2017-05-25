@@ -4,8 +4,7 @@ from flask import request
 from app.api import Auth, Response, CMD, api_routes, auth
 
 @app.route('/', defaults={'path': ''})
-@app.route('/<path:path>', methods = ['GET'])
-@app.route('/<path:path>', methods = ['POST'])
+@app.route('/<path:path>', methods = ['GET', 'POST'])
 @auth.login_required
 def catch_all_post(path):
 	post = " "

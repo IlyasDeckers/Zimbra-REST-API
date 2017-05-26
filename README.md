@@ -21,32 +21,93 @@ $ ./run.py
 
 ### Endpoints
 
-```
+#### List all accounts
+
+```shell
 GET /api/accounts
+```
+returns:
 
-    curl -i -u user:password -H "Content-Type: application/json" -X POST http://IP:5000/todo/api/account/create
+```shell
+    [
+      {
+        "code": "200", 
+        "message": "success", 
+        "result": [
+          "admin@mail.io", 
+          "spam.dwhzveurl@mail.io", 
+          "ham.upkkvzyq@mail.io", 
+          "virus-quarantine.0gpprctzgk@mail.io", 
+          "ilyas@ilyasdeckers.be", 
+          ...
+        ], 
+        "status": "ok"
+      }
+    ]
+```
 
+#### List accounts by domain
+
+```shell
 POST /api/accounts
 
-    curl -i -u user:password -H "Content-Type: application/json" -X POST -d "{"domain":"example.com"}" http://IP:5000/todo/api/account/create
+    {
+        "domain":"example.com"
+    }
+```
+returns:
+```shell
+    [
+      {
+        "code": "200", 
+        "message": "success", 
+        "result": [
+          "ilyas@ilyasdeckers.be", 
+          "info@ilyasdeckers.be",
+          ...
+        ], 
+        "status": "ok"
+      }
+    ]
 
+```
+
+#### Create new account
+```shell
 POST /api/account/create
 
-     curl -i -u user:password -H "Content-Type: application/json" -X POST -d "{"account":"info@example.com", "password": "PASSWORD"}" http://IP:5000/todo/api/account/create
+     {
+        "account":"info@example.com", 
+        "password": "PASSWORD"
+     }
 
-# Delete account
+```
+#### Delete account
+```shell
 POST /api/account/delete
 
-    curl -i -u user:password -H "Content-Type: application/json" -X POST -d "{"account":"info@example.com"}" http://IP:5000/todo/api/account/delete
-
-# Add a new domain
+    {
+        "account":"info@example.com"
+    }
+```
+#### Get account info
+```shell
+# Get account info
 POST /api/account/info
 
-    curl -i -u user:password -H "Content-Type: application/json" -X POST -d "{"account":"info@example.com"}" http://IP:5000/todo/api/account/info
+    {
+        "account":"info@example.com"
+    }
+    
+    
 ```
 
 ## To-do
 - create routes
-- update auth system with tokens
-- proxy server
+  - account provisioning
+  - migrate emails IMAP
+  - add domains
+  - update COS
+- auth with tokens
+- proxy server (nginx or standalone uwsi server)
 - update installation

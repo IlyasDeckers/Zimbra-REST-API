@@ -63,7 +63,8 @@ returns:
         "message": "success", 
         "result": [
           "ilyas@ilyasdeckers.be", 
-          ""
+          "info@ilyasdeckers.be",
+          ...
         ], 
         "status": "ok"
       }

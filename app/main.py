@@ -6,12 +6,12 @@ from app.api import Auth, Response, CMD, api_routes, auth
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>', methods = ['GET', 'POST'])
 @auth.login_required
-def catch_all_post(path):
+def routes(path):
 	post = " "
 	if request.method == 'POST':
 		for param in api_routes[path]["params"]:
 			if not request.json.get(param):
-				return Response('please provide the ' + param + ' parameter').ResponseNotFound()
+				return Response("error").badRequest('please provide the ' + param + ' parameter')
 			post += request.json.get(param) + " "
 	return CMD().execute(api_routes[path]["command"] + post)
 @app.route('/api/hash', methods = ['POST'])

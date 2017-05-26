@@ -1,12 +1,13 @@
 #!flask/bin/python
 
 from flask import jsonify
+import json
 
 class Response():
 	def __init__(self, message):
 		self.message = message
 
-	def responseOk(self, result):
+	def success(self, result):
 		status = [
 			{
 				"status": "ok", 
@@ -17,8 +18,20 @@ class Response():
 		]
 
 		return jsonify(status)
+	
+	def badRequest(self, result):
+		status = [
+			{
+				"status": "bad request", 
+				"code": "400",
+				"message": self.message,
+				"result": result
+			}
+		]
 
-	def ResponseNotFound(self):
+		return jsonify(status)
+
+	def notFound(self):
 		status = [
 			{
 				"status": "not found", 
@@ -29,7 +42,7 @@ class Response():
 
 		return jsonify(status)
 
-	def responseInternalServerError(self):
+	def internalServerError(self):
 		status = [
 			{
 				"status": "server error",

@@ -26,6 +26,25 @@ $ ./run.py
 ```shell
 GET /api/accounts
 ```
+returns:
+
+```shell
+    [
+      {
+        "code": "200", 
+        "message": "success", 
+        "result": [
+          "admin@mail.io", 
+          "spam.dwhzveurl@mail.io", 
+          "ham.upkkvzyq@mail.io", 
+          "virus-quarantine.0gpprctzgk@mail.io", 
+          "ilyas@ilyasdeckers.be", 
+          ...
+        ], 
+        "status": "ok"
+      }
+    ]
+```
 
 #### List accounts by domain
 
@@ -36,8 +55,24 @@ POST /api/accounts
         "domain":"example.com"
     }
 ```
-#### Create new account
+returns:
+```shell
+    [
+      {
+        "code": "200", 
+        "message": "success", 
+        "result": [
+          "ilyas@ilyasdeckers.be", 
+          ""
+        ], 
+        "status": "ok"
+      }
+    ]
+
 ```
+
+#### Create new account
+```shell
 POST /api/account/create
 
      {

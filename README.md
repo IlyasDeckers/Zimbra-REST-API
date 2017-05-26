@@ -109,5 +109,5 @@ POST /api/account/info
   - add domains
   - update COS
 - auth with tokens
-- proxy server (nginx or standalone uwsi server)
+- proxy server (nginx or standalone WSGI server)
 - update installation
